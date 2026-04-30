@@ -41,6 +41,7 @@ export const SITE_CONTENT: SiteContent = {
       "Designed engaging gameplay loops focused on retention, including increasing difficulty curves and responsive feedback systems.",
      "Prototyped and iterated on multiple hypercasual game concepts, refining core mechanics to improve engagement and replayability.",
 "Developed Fire TV-compatible applications with joystick-based navigation and custom pointer-driven UI interaction systems.",
+"Integrated and customized multiple ad network SDKs including AdMob, AppLovin, Chartboost, Yandex Ads, and Mintegral for monetization.",
       ],
     },
   ],
@@ -104,12 +105,13 @@ trailerUrl: "https://youtube.com/shorts/pPzuH9Rvk5E?feature=share",
 
   about: {
     description: `
-      Hi, I’m Musa Ali, a Unity Game Developer focused on building interactive and optimized gaming experiences.
+      Hi, I’m Musa Ali, a Unity Game Developer specializing in hypercasual mobile games and interactive gameplay systems.
 
-      I specialize in developing mobile games, AI-based systems, and Fire TV applications. My work includes creating full game mechanics like Ludo systems, AI movement logic, and custom input handling.
+I build fast, responsive, and engaging game experiences, focusing on core mechanics like physics-based movement, tap controls, obstacle systems, and difficulty progression.
 
-      I enjoy solving complex gameplay problems, optimizing performance for real devices, and building systems that feel smooth and responsive.
-    `,
+With experience in mobile optimization and Fire TV development, I create games that run smoothly across devices while maintaining high player engagement.
+
+I enjoy rapidly prototyping ideas, testing gameplay loops, and refining mechanics to create addictive and scalable game experiences.`,
     image: "/images/musa-large.jpg",
   },
 };

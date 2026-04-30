@@ -50,7 +50,7 @@ export const SITE_CONTENT: SiteContent = {
       "Fast-paced rhythm tap game with dynamic music syncing and reactive tile mechanics.",
     linkPreview:
       "https://www.amazon.com/Best-Music-Tiles-Dancing-Forever/dp/B085S567Q9",
-	trailerUrl: "/videos/best-music-tiles-trailer.mp4",
+	trailerUrl: "https://youtube.com/shorts/l1pi9VmLVkk?feature=share",
     image: "/images/tiles1.png",
   },
   {
@@ -59,7 +59,7 @@ export const SITE_CONTENT: SiteContent = {
       "Color-switch arcade game featuring timing-based mechanics and smooth physics-based movement.",
     linkPreview:
       "https://www.amazon.com/Magic-Neon-Switch-Color-Ball/dp/B08JVFZLVH",
-   trailerUrl: "/videos/magic-neon-switch-trailer.mp4",
+   trailerUrl: "https://youtube.com/shorts/REns9RtcR6g?feature=share",
  image: "/images/neon-switch.png",
   },
   {
@@ -68,7 +68,7 @@ export const SITE_CONTENT: SiteContent = {
       "Beat-based rhythm game with synchronized tile generation and increasing difficulty system.",
     linkPreview:
       "https://www.amazon.com/Rhythm-Music-Tilez-Beats-Tap/dp/B0B292BNMP",
-   trailerUrl: "/videos/rhythm-music-tiles-trailer.mp4",
+   trailerUrl: "https://youtube.com/shorts/hmlmDTcxG-o?feature=share",
  image: "/images/rhythm-tilez.png",
   },
   {
@@ -77,7 +77,7 @@ export const SITE_CONTENT: SiteContent = {
       "3D casual racing game featuring water slide physics, obstacle navigation, and smooth character control.",
     linkPreview:
       "https://www.amazon.com/Aqua-Park-Water-Race-Slide/dp/B0C285G6LW",
-    trailerUrl: "/videos/aqua-park-trailer.mp4",
+    trailerUrl: "https://youtube.com/shorts/5oKkLyWcC-4?feature=share",
 image: "/images/aqua-park.png",
   },
   {
@@ -86,7 +86,7 @@ image: "/images/aqua-park.png",
       "Classic piano tile rhythm game with responsive input system and high-speed gameplay loops.",
     linkPreview:
       "https://www.amazon.com/Magic-tiles-Dancing-Music-Forever/dp/B084DG9G5F",
-   trailerUrl: "/videos/magic-tiles-dancing-trailer.mp4",
+   trailerUrl: "https://youtube.com/shorts/yoXRYH0cihM?feature=share",
  image: "/images/magic-tiles.png",
   },
   {
@@ -95,7 +95,7 @@ image: "/images/aqua-park.png",
     "A high-speed 3D rolling ball runner inspired by Going Balls, featuring smooth physics, obstacle navigation, and dynamic track balancing gameplay.",
   linkPreview:
     "https://www.amazon.com/gp/product/B0FYFZ4D2Y",
-trailerUrl: "/videos/rolling-ball-trailer.mp4",
+trailerUrl: "https://youtube.com/shorts/pPzuH9Rvk5E?feature=share",
   image: "/images/rolling-ball.png",
 },
 ],

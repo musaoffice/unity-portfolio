@@ -20,15 +20,24 @@ const { name, specialty, summary, email } = Astro.props;
     {summary}
   </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
- <a
-      class="inline-block rounded-full border border-primary px-8 py-5 text-sm leading-5 font-medium text-primary hover:bg-primary hover:text-[#fff] transition-colors"
+  <div class="flex flex-col gap-4 sm:flex-row">
+    <!-- Get in Touch Button - Opens Gmail directly -->
+    <a
+      class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff] hover:bg-primary/90 transition-colors text-center"
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=musaa7124@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Get in Touch
+    </a>
+    
+    <!-- Download Resume Button -->
+    <a
+      class="inline-block rounded-full border border-primary px-8 py-5 text-sm leading-5 font-medium text-primary hover:bg-primary hover:text-[#fff] transition-colors text-center"
       href="/Musa_Ali_Unity_Resume.pdf"
       download
     >
       Download Resume
     </a>
+  </div>
 </section>

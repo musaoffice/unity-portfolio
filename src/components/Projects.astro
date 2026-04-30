@@ -16,8 +16,32 @@ const { projects } = Astro.props;
       const top = 98 + index * 40;
       const modalId = `trailer-modal-${index}`;
       
-      // Check if URL is YouTube embed
-      const isYouTube = trailerUrl?.includes('youtube.com/embed') || trailerUrl?.includes('youtu.be');
+      // Updated: Better YouTube detection
+      const isYouTube = trailerUrl && (
+        trailerUrl.includes('youtube.com/embed') || 
+        trailerUrl.includes('youtu.be') ||
+        trailerUrl.includes('youtube.com/shorts') ||  // Add this for Shorts
+        trailerUrl.includes('youtube.com/watch')      // Add this for regular YouTube links
+      );
+      
+      // Convert different YouTube URL formats to embed URL if needed
+      let embedUrl = trailerUrl;
+      if (trailerUrl && trailerUrl.includes('youtube.com/shorts')) {
+        const videoId = trailerUrl.split('/shorts/')[1]?.split('?')[0];
+        if (videoId) {
+          embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        }
+      } else if (trailerUrl && trailerUrl.includes('youtube.com/watch')) {
+        const videoId = new URL(trailerUrl).searchParams.get('v');
+        if (videoId) {
+          embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        }
+      } else if (trailerUrl && trailerUrl.includes('youtu.be')) {
+        const videoId = trailerUrl.split('/').pop()?.split('?')[0];
+        if (videoId) {
+          embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        }
+      }
       
       return (
         <div
@@ -80,7 +104,7 @@ const { projects } = Astro.props;
                   <iframe
                     width="800"
                     height="450"
-                    src={trailerUrl}
+                    src={embedUrl}
                     title="Game Trailer"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

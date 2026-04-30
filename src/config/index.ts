@@ -13,7 +13,6 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "About", href: "#about" },
   ],
   socialLinks: [
-    { text: "Github", href: "https://github.com/musaoffice" },
     { text: "LinkedIn", href: "https://www.linkedin.com/in/musa-ali-a9b972140/" },
   ],
   socialImage: "/images/og.png",
@@ -36,9 +35,12 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "2021",
       endDate: "Present",
       summary: [
-        "Developed multiple Unity-based mobile games including a full-featured Ludo game with AI and multiplayer systems.",
-        "Built Fire TV compatible apps with joystick navigation and custom UI interaction systems.",
-        "Optimized game performance on Android, solving physics jitter and movement issues in real-time gameplay systems.",
+         "Developed and published multiple hypercasual mobile games including rhythm, arcade, and physics-based runners on Amazon Appstore.",
+      "Implemented core gameplay systems such as tap-based input, smooth player movement, obstacle handling, and difficulty progression.",
+      "Optimized performance for Android devices by reducing frame drops and improving responsiveness in real-time gameplay.",
+      "Designed engaging gameplay loops focused on retention, including increasing difficulty curves and responsive feedback systems.",
+     "Prototyped and iterated on multiple hypercasual game concepts, refining core mechanics to improve engagement and replayability.",
+"Developed Fire TV-compatible applications with joystick-based navigation and custom pointer-driven UI interaction systems.",
       ],
     },
   ],
@@ -50,7 +52,7 @@ export const SITE_CONTENT: SiteContent = {
       "Fast-paced rhythm tap game with dynamic music syncing and reactive tile mechanics.",
     linkPreview:
       "https://www.amazon.com/Best-Music-Tiles-Dancing-Forever/dp/B085S567Q9",
-	trailerUrl: "https://youtube.com/shorts/l1pi9VmLVkk?feature=share",
+	trailerUrl: "https://youtu.be/l1pi9VmLVkk?si=-jT7qoO_aIW4wPMn",
     image: "/images/tiles1.png",
   },
   {

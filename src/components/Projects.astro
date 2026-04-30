@@ -15,6 +15,10 @@ const { projects } = Astro.props;
     projects.map(({ name, summary, image, linkPreview, linkSource, trailerUrl }, index) => {
       const top = 98 + index * 40;
       const modalId = `trailer-modal-${index}`;
+      
+      // Check if URL is YouTube embed
+      const isYouTube = trailerUrl?.includes('youtube.com/embed') || trailerUrl?.includes('youtu.be');
+      
       return (
         <div
           style={`top: ${top}px;`}
@@ -63,22 +67,36 @@ const { projects } = Astro.props;
               class="rounded-xl backdrop:bg-black/70 open:flex open:items-center open:justify-center relative"
             >
               <div class="relative max-w-4xl p-4">
-                <video 
-                  controls 
-                  autoplay 
-                  class="w-full max-h-[80vh] rounded-lg"
-                  src={trailerUrl}
-                >
-                  Your browser does not support the video tag.
-                </video>
-                
-                <!-- Cross button over the video box -->
+                {/* Cross button over the video box */}
                 <button
                   class="absolute -top-3 -right-3 bg-black/80 hover:bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors cursor-pointer z-20 shadow-lg"
                   onclick={`document.getElementById('${modalId}').close()`}
                 >
                   ✕
                 </button>
+                
+                {/* YouTube Embed or Video File */}
+                {isYouTube ? (
+                  <iframe
+                    width="800"
+                    height="450"
+                    src={trailerUrl}
+                    title="Game Trailer"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    class="rounded-lg w-full max-h-[80vh]"
+                  ></iframe>
+                ) : (
+                  <video 
+                    controls 
+                    autoplay 
+                    class="w-full max-h-[80vh] rounded-lg"
+                    src={trailerUrl}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                )}
               </div>
             </dialog>
           )}

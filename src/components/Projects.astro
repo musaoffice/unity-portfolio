@@ -1,0 +1,89 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import type { ProjectProps } from "@types";
+
+interface Props {
+  projects: ProjectProps[];
+}
+
+const { projects } = Astro.props;
+---
+
+<Section text="Featured Projects" href="projects">
+  {
+    projects.map(({ name, summary, image, linkPreview, linkSource, trailerUrl }, index) => {
+      const top = 98 + index * 40;
+      const modalId = `trailer-modal-${index}`;
+      return (
+        <div
+          style={`top: ${top}px;`}
+          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+        >
+          <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
+            <div class="px-6 pt-12">
+              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+                {name}
+              </h3>
+              <p class="text-base text-neutral">{summary}</p>
+              <div class="flex gap-5 pt-10 text-white">
+                <a
+                  href={linkPreview}
+                  target="_blank"
+                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
+                >
+                  Preview
+                </a>
+                
+                {trailerUrl && (
+                  <button
+                    class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline cursor-pointer"
+                    onclick={`document.getElementById('${modalId}').showModal()`}
+                  >
+                    Trailer
+                  </button>
+                )}
+              </div>
+            </div>
+            <div class="flex items-end justify-end overflow-hidden">
+              <Image
+                className="h-full w-[95%] rounded-xl object-none object-top-left sm:h-[85%] sm:w-full"
+                src={image}
+                alt={name}
+                width="220"
+                height="220"
+              />
+            </div>
+          </div>
+
+          <!-- Modal Dialog -->
+          {trailerUrl && (
+            <dialog 
+              id={modalId} 
+              class="rounded-xl backdrop:bg-black/70 open:flex open:items-center open:justify-center relative"
+            >
+              <div class="relative max-w-4xl p-4">
+                <video 
+                  controls 
+                  autoplay 
+                  class="w-full max-h-[80vh] rounded-lg"
+                  src={trailerUrl}
+                >
+                  Your browser does not support the video tag.
+                </video>
+                
+                <!-- Cross button over the video box -->
+                <button
+                  class="absolute -top-3 -right-3 bg-black/80 hover:bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors cursor-pointer z-20 shadow-lg"
+                  onclick={`document.getElementById('${modalId}').close()`}
+                >
+                  ✕
+                </button>
+              </div>
+            </dialog>
+          )}
+        </div>
+      );
+    })
+  }
+</Section>
